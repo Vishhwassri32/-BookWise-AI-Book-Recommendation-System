@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero glass">
+  <h1>Find your next favourite book</h1>
+  <p class="lead">Smart recommendations using NLP and clustering — premium UI.</p>
+
+  <form action="/recommend" method="POST" class="search-form">
+    <input id="search-input" name="title" type="text" placeholder="Type book title (try: Classical Mythology)" autocomplete="off">
+    <div class="controls">
+      <button class="btn" type="submit">Search</button>
+      <button id="voice-btn" class="btn alt" type="button" title="Use voice search">🎤</button>
+    </div>
+    <div id="suggestions" class="suggestions"></div>
+  </form>
+</section>
+{% endblock %}

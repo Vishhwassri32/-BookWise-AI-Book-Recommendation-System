@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page glass">
+  <h2>Trending / Recent Books</h2>
+  <div class="grid-cards">
+    {% for b in books %}
+    <div class="card">
+      <h3>{{ b['Book-Title'] }}</h3>
+      <p class="muted">{{ b['Book-Author'] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

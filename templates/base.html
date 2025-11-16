@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Book Recommender</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="logo"><a href="/">AI Book Recommender</a></div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/recommend">Recommend</a>
+      <a href="/categories">Categories</a>
+      <a href="/authors">Authors</a>
+      <a href="/trending">Trending</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main class="main-wrap">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div>© {{ (2025) }} - AI Book Recommender — Minor Project</div>
+  </footer>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

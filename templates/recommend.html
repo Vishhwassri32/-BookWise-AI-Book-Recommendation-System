@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page glass">
+  <h2>Recommendations</h2>
+
+  {% if query %}
+  <p class="muted">Results for: <strong>{{ query }}</strong></p>
+  {% endif %}
+
+  {% if results %}
+  <div class="grid-cards">
+    {% for r in results %}
+    <div class="card">
+      <h3>{{ r['Book-Title'] }}</h3>
+      <p class="muted">{{ r['Book-Author'] }}</p>
+      <div class="chip">Category: {{ r['cluster_name'] }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <p class="muted">No recommendations found. Try another title.</p>
+  {% endif %}
+</section>
+{% endblock %}

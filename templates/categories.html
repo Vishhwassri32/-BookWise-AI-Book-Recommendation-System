@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page glass">
+  <h2>AI Categories (Auto-generated)</h2>
+  <p class="muted">These categories are created by clustering book titles. Click a category to preview sample titles.</p>
+
+  <div class="grid-cards">
+    {% for c in categories %}
+    <div class="card category-card" data-cluster="{{ c.cluster }}">
+      <h3>Category {{ c.cluster }}: {{ c.name }}</h3>
+      <p class="muted">{{ c.count }} books</p>
+      <div class="sample">
+        {% for s in c.sample %}
+          <div class="sample-item">{{ s }}</div>
+        {% endfor %}
+      </div>
+      <form method="POST" action="/recommend" style="margin-top:10px;">
+        <input type="hidden" name="title" value="{{ c.sample[0] if c.sample else '' }}">
+        <button class="btn">Explore (sample)</button>
+      </form>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
